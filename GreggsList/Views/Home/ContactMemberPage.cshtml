@@ -1,0 +1,17 @@
+﻿@model GreggsListData.Models.Item
+@{
+    ViewBag.Title = "ContactMemberPage";
+}
+
+<h2>Contact @Model.User.UserName</h2>
+<div>
+    <form method="post">
+        <label>Title</label><input type="text" name="Title" class="form-control"/><br />
+        <label>Message</label><textarea rows="6" cols="200" name="Body" class="form-control"placeholder="Your message here"></textarea><br />
+        <input type="hidden" value="@Model.UserId" name="UserId"/>
+        <input type="hidden" value="@Model.Id" name="MessageId" />
+        <button type="submit">Send Message</button>
+        
+    </form>
+
+</div>

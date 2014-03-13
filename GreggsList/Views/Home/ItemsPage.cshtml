@@ -1,0 +1,15 @@
+﻿@model GreggsListData.Models.Item
+@{
+    
+}
+
+
+
+<h1>@Model.Name</h1>
+<p>@Model.DateListed</p>
+<h4>$@Model.Price</h4>
+<p>@Model.Description</p>
+
+@using (Html.BeginForm("ContactMemberPage", "Home", new { id = @Model.Id }, FormMethod.Get)) { 
+<button type="submit">Contact</button><p>Do you want to contact @Model.User.UserName ?</p>
+}

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - GreggsList</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-4 column">
+            </div>
+            <div class="col-md-3 column">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        
+                        
+                        <div class="col-sm-8 control-label">@Html.ActionLink("Create A New Post", "CreatePost", "Home")</div>
+                        
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+        <div id="Strip" class="row clearfix">
+            <div class="col-md-12 column">
+                <p><h1 id="Banner">Gregg's List</h1></p>
+                <p><h4 id="SubBanner">Pretty Much Craigslist :)</h4></p>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - GreggsList.  Not Actually Website.  Demo Andrew Lazette.</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <link href='http://fonts.googleapis.com/css?family=Iceland' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+</body>
+</html>

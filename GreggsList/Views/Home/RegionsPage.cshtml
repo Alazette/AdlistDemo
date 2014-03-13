@@ -1,0 +1,23 @@
+﻿@model GreggsList.Models.GLRPViewModel
+@{
+   
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<form method="get">
+    <input type="text" name="itemSearch" class="form-control" /><button type="submit">Search For Item</button>
+</form>
+
+<table class="table" >
+    @foreach (var item in Model.Items) { 
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.DateListed</td>
+        <td>  
+            @using (Html.BeginForm("ItemsPage", "Home", new { id = @item.Id }, FormMethod.Get)) { 
+            <button type="submit">Look Closer</button>
+            }
+        </td>
+    </tr>
+    }
+</table>

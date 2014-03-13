@@ -1,0 +1,35 @@
+﻿@model GreggsList.Models.GLHPViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                
+                
+                <div class="col-md-12 column" >
+                @foreach (var state in Model.States)
+                {
+                <h4 id="CityNames">@state.Name</h4>
+                    
+                    foreach (var stateRegion in state.Regions){
+                        using (Html.BeginForm("RegionsPage", "Home", new { id = @stateRegion.Id }, FormMethod.Get, new { @class = "Main"}))
+                        { 
+                            <button class="btn btn-danger">@stateRegion.Name</button>
+                        
+                        }
+                    }
+                    
+                }      
+                </div>
+                
+                <div class="col-md-4 column">
+                </div>
+                <div class="col-md-4 column">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

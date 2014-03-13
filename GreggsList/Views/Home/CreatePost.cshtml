@@ -1,0 +1,31 @@
+﻿@model GreggsList.Models.GLCPViewModel
+
+@{
+    ViewBag.Title = "CreatePost";
+}
+
+<h2>CreatePost</h2>
+
+<div>
+    <form method="post">
+        <label>UserName</label><input class="form-control" type="text" name="UserName" /><br />
+        <label>Email</label><input type="email" class="form-control" name="Email"/><br />
+        <select name ="Region" class="form-control" >
+            @foreach (var state in Model.States)
+            {
+                <optgroup label="@state.Name">
+
+                    @foreach (var stateRegion in state.Regions)
+                    {
+                        <option value="@stateRegion.Id">@stateRegion.Name</option>
+                    }
+                </optgroup>
+            }
+        </select>
+        <label>Item Name</label><input class="form-control" type="text" name="ItemName" />
+        <label>Description</label><textarea class="form-control" name="Description"></textarea>
+        <label>Price (Please Enter Number)</label><input type="number" class="form-control" name="Price"/>
+        
+        <button type="submit" class="btn btn-success" >Post</button>
+    </form>
+</div>
